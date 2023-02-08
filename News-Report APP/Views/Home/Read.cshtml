@@ -1,0 +1,49 @@
+﻿@model NewsApplication1.DataComponent.NewsReport
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Complete News</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">@ViewBag.Message</p>
+}
+else
+{
+    <h2>View Details Of @Model.Title</h2>
+    <hr />
+    using (Html.BeginForm())
+    {
+        <table cellspacing="20" cellpadding="10">
+            <tr>
+                <td></td>
+                <td>@Html.EditorFor(m => m.ReportId, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>@Html.EditorFor(m => m.Description, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>Full Description</td>
+                <td>@Html.EditorFor(m => m.ReporterName, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>Place</td>
+                <td>@Html.EditorFor(m => m.Place, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>@Html.EditorFor(m => m.Date, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>@Html.EditorFor(m => m.Time, new { @class = "form-control" })</td>
+            </tr>
+        </table>
+
+    }
+}
+
+

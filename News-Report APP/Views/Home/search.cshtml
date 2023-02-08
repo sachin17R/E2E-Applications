@@ -1,0 +1,33 @@
+﻿@model List<NewsApplication1.DataComponent.NewsReport>
+ 
+@{
+    ViewBag.Title = "search";
+}
+ 
+<h2>search</h2>
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">@ViewBag.Message</p>
+}
+ 
+{
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-8">
+        @foreach (var item in Model)
+        {
+            <div class="container" style="border
+    :solid 2px red">
+                <div class="row">
+                    <h2 style="display:inline-block">@item.Title  </h2>  <h4 style="text-align:end">@item.Date    </h4>
+                    <hr />
+                    <p>@item.Description</p><p>@Html.ActionLink("View More", "More", new { id = item.ReportId }, new { @class = "btn btn-primary" })</p>
+                    <hr />
+                    <h5 style="text-align:end">@item.ReporterName  From @item.Place</h5>
+ 
+                </div>
+            </div>
+        }
+    </div>
+</div>
+}
