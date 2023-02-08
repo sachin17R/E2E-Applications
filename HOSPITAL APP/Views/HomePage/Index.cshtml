@@ -1,0 +1,38 @@
+﻿@model Hospital_Application.DataComponent.tblPatient
+
+@{
+    ViewBag.Title = "Index";
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "targeted"
+    };
+}
+
+<h2>Welcome</h2>
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-toggler navbar-brand text-xl-center"><menu>
+            <menuitem>@Ajax.ActionLink("All Patients","Allpatient",null,options,new { @class = "btn btn-success"})</menuitem>
+            <menuitem>@Ajax.ActionLink("All Doctors", "Alldocs", null, options, new { @class = "btn btn-primary" })</menuitem>
+            <menuitem>@Ajax.ActionLink("Add Patient", "Addnewpat", null, options, new { @class = "btn btn-danger" })</menuitem>
+            <menuitem>@Ajax.ActionLink("Add Doctor", "Addnewdoc", null, options, new { @class = "btn btn-secondary" })</menuitem>
+          
+            </menu></nav>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border:solid 1px Black" id="targeted">
+            <h2>Hospital Management Application</h2>
+            <p>Here U will Find Our Best Services Regarding your Health.</p>
+
+            @if(TempData["success"] != null)
+            {
+               <h4 style="color:red">@TempData["Success"]</h4>
+            }
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+

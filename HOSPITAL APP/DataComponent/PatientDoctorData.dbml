@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="3338" Class="PatientDoctorDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.171.36;Initial Catalog=3338;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="_3338ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblDoctors" Member="tblDoctors">
+    <Type Name="tblDoctor">
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Specialization" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="tblDoctor_tblPatient" Member="tblPatients" ThisKey="DoctorId" OtherKey="DoctorID" Type="tblPatient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatient" Member="tblPatients">
+    <Type Name="tblPatient">
+      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientAddress" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BillAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblPatient_tblPatient" Member="tblPatient2" ThisKey="PatientId" OtherKey="PatientId" Type="tblPatient" Cardinality="One" />
+      <Association Name="tblDoctor_tblPatient" Member="tblDoctor" ThisKey="DoctorID" OtherKey="DoctorId" Type="tblDoctor" IsForeignKey="true" />
+      <Association Name="tblPatient_tblPatient" Member="tblPatient1" ThisKey="PatientId" OtherKey="PatientId" Type="tblPatient" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

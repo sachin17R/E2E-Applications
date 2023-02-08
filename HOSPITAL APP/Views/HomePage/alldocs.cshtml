@@ -1,0 +1,31 @@
+﻿@model List<PatientDataAccessLib.DataComponents.tblDoctor>
+
+
+@{
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "targeted"
+    };
+
+    TempData["Success"] = null;
+}
+
+<h1 style="text-align:center">All Doctors Present in Our Hospital</h1>
+
+<table class="table table-bordered table-hover" width="800">
+    <tr style="text-align:center">
+        <th>DOCTOR ID</th>
+        <th>DOCTOR NAME</th>
+        <th>SPECIALIZATION</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>@item.DoctorId</td>
+            <td>@item.DoctorName</td>
+            <td>@item.Specialization</td>
+        </tr>
+    }
+</table>
+

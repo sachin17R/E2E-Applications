@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PatientDoctorData">
+  <DataContextMoniker Name="/PatientDoctorDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8762f37b-7a70-43a7-b143-024747446260" absoluteBounds="6.375, 2.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PatientDoctorDataDataContext/tblDoctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbbbd4dd-f5b5-45e2-9a30-743fac64811f" absoluteBounds="6.39, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1fa7063b-e7a8-4fd1-ac6c-f4407ff70ca7" absoluteBounds="3.125, 2.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PatientDoctorDataDataContext/tblPatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9889db55-47c7-4bdf-8e64-3db57c501aca" absoluteBounds="3.1399999999999997, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 3.56814697265625); (5.125 : 3.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatientDoctorDataDataContext/tblDoctor/tblDoctor_tblPatient" />
+      <nodes>
+        <classShapeMoniker Id="8762f37b-7a70-43a7-b143-024747446260" />
+        <classShapeMoniker Id="1fa7063b-e7a8-4fd1-ac6c-f4407ff70ca7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.83052987154447 : 4.39589680989583); (3.83052987154447 : 4.59554680989583); (4.2576132048778 : 4.59554680989583); (4.2576132048778 : 5.00089680989583); (4.41265918219151 : 5.00089680989583 : JumpStart); (4.57932584885817 : 5.00089680989583 : JumpEnd); (4.71594653821114 : 5.00089680989583); (4.71594653821114 : 5.60423014322917); (4.94390918219151 : 5.60423014322917); (4.94390918219151 : 5.29089680989583); (4.79927987154447 : 5.29089680989583 : JumpStart); (4.6326132048778 : 5.29089680989583 : JumpEnd); (4.49599251552484 : 5.29089680989583); (4.49599251552484 : 4.81062180989583); (4.43349251552484 : 4.81062180989583); (4.43349251552484 : 4.39589680989583)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PatientDoctorDataDataContext/tblPatient/tblPatient_tblPatient" />
+      <nodes>
+        <classShapeMoniker Id="1fa7063b-e7a8-4fd1-ac6c-f4407ff70ca7" />
+        <classShapeMoniker Id="1fa7063b-e7a8-4fd1-ac6c-f4407ff70ca7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

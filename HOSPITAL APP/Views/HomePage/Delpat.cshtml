@@ -1,0 +1,16 @@
+﻿@model PatientDataAccessLib.DataComponents.tblPatient
+
+@using (Html.BeginForm())
+{
+    <h3>Are You Sure Want To Delete</h3>
+    @Html.HiddenFor(model => model.PatientId, new { htmlAttributes = new { @class = "form-control" } })
+    <br />
+    <p>Patient Id     : @Html.DisplayFor((m) => m.PatientId)</p><br />
+    <p>Patient Name   : @Html.DisplayFor((m) => m.PatientName)</p><br />
+    <p>Patient Address: @Html.DisplayFor((m) => m.PatientAddress)</p><br />
+    <p>Bill Amount    : @Html.DisplayFor((m) => m.BillAmount)</p><br />
+   
+    <div style="display:inline">
+    <button type="submit" class="btn btn-danger">Delete</button>    <button>@Html.ActionLink("Cancel", "Index")</button>
+    </div>
+}

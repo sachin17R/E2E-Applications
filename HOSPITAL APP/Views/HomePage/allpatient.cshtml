@@ -1,0 +1,36 @@
+﻿@model List<PatientDataAccessLib.DataComponents.tblPatient>
+
+@{ 
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "targeted"
+    };
+
+    TempData["Success"] = null;
+}
+
+<h1 style="text-align:center">All Patients Present in Our Hospital</h1>
+
+<table class="table table-bordered table-hover" width="800">
+    <tr style="text-align:center">
+        <th>PATIENT ID</th>
+        <th>PATIENT NAME</th>
+        <th>ADDRESS</th>
+        <th>BILL AMOUNT</th>
+        <th>DOCTOR ID</th>
+        <th colspan="2">OPTION</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>@item.PatientId</td>
+            <td>@item.PatientName</td>
+            <td>@item.PatientAddress</td>
+            <td>@item.BillAmount</td>
+            <td>@item.DoctorID</td>
+            <td>@Ajax.ActionLink("Edit", "Editpat", new { id = item.PatientId }, options, new { @class = "btn btn-success" })</td>
+            <td>@Ajax.ActionLink("Delete", "Delpat", new { id = item.PatientId }, options, new { @class = "btn btn-danger" })</td>
+        </tr>
+    }
+</table>
