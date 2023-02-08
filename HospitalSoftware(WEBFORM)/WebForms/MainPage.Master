@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="HospitalSoftware.WebForms.MainPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body{
+            background-color:azure;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="=container">
+            <div class="row">
+                <h1>Hospital Management Application</h1>
+                <div>
+                    <asp:Menu BorderStyle="Solid" runat="server" CssClass="align-content-md-center" Orientation="Horizontal" StaticSubMenuIndent="16px" BackColor="#CCFFCC" BorderColor="#6699FF" BorderWidth="2px" Font-Bold="True" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="#000099" padding="50px" Height="30px">
+                        <DynamicHoverStyle BackColor="#FFFF66" />
+                        <Items>
+                            <asp:MenuItem Text="Home" NavigateUrl="~/WebForms/HomePage.aspx" />
+                            <asp:MenuItem Text="Register Patient" NavigateUrl="~/WebForms/RegisterPatient.aspx" />
+                            <asp:MenuItem Text="Consultation" NavigateUrl="~/WebForms/ConsulationPage.aspx" />
+                            <asp:MenuItem Text="Billing" NavigateUrl="~/WebForms/BillingPage.aspx" />
+                        </Items>
+                        <StaticMenuItemStyle HorizontalPadding="20px" />
+                        <StaticMenuStyle HorizontalPadding="500px" />
+                    </asp:Menu>
+                </div>
+            </div>
+            <hr />
+            <hr />
+
+            <div class="row">
+                <div class="col-md-3" style="border:hidden 2px"  >
+                    <asp:Image ImageUrl="~/Images/images (3).jfif"  runat="server" Height="200px" Width="380px" />
+                    <p>
+                    <asp:Image ImageUrl="~/Images/images.jfif" runat="server" Height="200px" Width =" 380px" />
+                </p>
+                </div>
+                <div class="col-md-9">
+                    <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
+
+
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>
